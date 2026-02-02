@@ -18,11 +18,11 @@ public class ContaCorrente extends AbstractConta{
         else{
             throw new InvalidInputError("Limite de empréstimo não pode ser negativo.");
         }
-        if(chequeEspecial > 0){
+        if(chequeEspecial >= 0){
         this.chequeEspecial = chequeEspecial;
         }
         else{
-            throw new InvalidInputError("Cheque especial deve ser maior que zero.");
+            throw new InvalidInputError("Cheque especial deve ser maior ou igual a zero.");
         }
         this.saldo = 0.0;
         this.dataAbertura = LocalDate.now();
@@ -33,7 +33,12 @@ public class ContaCorrente extends AbstractConta{
     }
 
     public void setChequeEspecial(Double chequeEspecial) {
-        this.chequeEspecial = chequeEspecial;
+        if(chequeEspecial >= 0){
+            this.chequeEspecial = chequeEspecial;
+        }
+        else{
+            throw new InvalidInputError("Cheque especial deve ser maior ou igual a zero.");
+        }
     }
 
     public Double getLimiteEmprestimo() {
@@ -41,7 +46,12 @@ public class ContaCorrente extends AbstractConta{
     }
 
     public void setLimiteEmprestimo(Double limiteEmprestimo) {
-        this.limiteEmprestimo = limiteEmprestimo;
+        if(limiteEmprestimo >= 0){
+            this.limiteEmprestimo = limiteEmprestimo;
+        }
+        else{
+            throw new InvalidInputError("Limite de empréstimo não pode ser negativo.");
+        }
     }
 
     @Override
