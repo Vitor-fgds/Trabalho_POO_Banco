@@ -32,7 +32,7 @@ public class ContaCorrente extends AbstractConta{
         return chequeEspecial;
     }
 
-    public void setChequeEspecial(Double chequeEspecial) {
+    public void setChequeEspecial(Double chequeEspecial) throws InvalidInputError {
         if(chequeEspecial >= 0){
             this.chequeEspecial = chequeEspecial;
         }
@@ -45,7 +45,7 @@ public class ContaCorrente extends AbstractConta{
         return limiteEmprestimo;
     }
 
-    public void setLimiteEmprestimo(Double limiteEmprestimo) {
+    public void setLimiteEmprestimo(Double limiteEmprestimo) throws InvalidInputError {
         if(limiteEmprestimo >= 0){
             this.limiteEmprestimo = limiteEmprestimo;
         }
