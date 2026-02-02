@@ -220,6 +220,11 @@ public class Program {
                             }
                         }
 
+                        if (cliente == null) {
+                            System.out.println("Cliente não encontrado.");
+                            break;
+                        }
+                        
                         if (cliente != null) {
                             System.out.println("1 - Conta Corrente");
                             System.out.println("2 - Conta Poupança");
